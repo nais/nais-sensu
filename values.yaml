@@ -1,0 +1,11 @@
+service:
+  name: sensu
+image:
+  repository: terjesannum/sensu-socket
+  tag: 1
+rabbitmq:
+  host: rabbitmq
+  port: 5672
+  vhost: /
+  user: guest
+  password: guest
