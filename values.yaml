@@ -3,6 +3,7 @@ service:
 image:
   repository: terjesannum/sensu-socket
   tag: 2
+loglevel: warn
 rabbitmq:
   host: rabbitmq
   port: 5672

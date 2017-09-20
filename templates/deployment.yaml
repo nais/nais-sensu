@@ -18,6 +18,8 @@ spec:
       - name: {{ template "nais-sensu.name" . }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         env:
+          - name: LOG_LEVEL
+            value: "{{ .Values.loglevel }}"
           - name: RABBITMQ_HOST
             value: "{{ .Values.rabbitmq.host }}"
           - name: RABBITMQ_PORT
