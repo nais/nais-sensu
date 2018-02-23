@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ template "nais-sensu.fullname" . }}
 spec:
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: {{ template "nais-sensu.name" . }}
