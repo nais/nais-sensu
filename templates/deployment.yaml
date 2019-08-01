@@ -35,3 +35,15 @@ spec:
         ports:
           - containerPort: 3030
             protocol: TCP
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["all"]
+          runAsNonRoot: true
+          runAsUser: {{ .Values.runAsUser }}
+        volumeMounts:
+          - name: config
+            mountPath: /etc/sensu/conf.d
+      volumes:
+        - name: config
+          emptyDir: {}
